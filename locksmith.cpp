@@ -50,6 +50,7 @@ private:
     bool running();
     int next();
     int pop();
+    int peek();
     void push(int);
 public:
     Locksmith(std::string);
@@ -63,6 +64,10 @@ int Locksmith::next() {
 
 int Locksmith::pop() {
     return pop_from(stack, 0);
+}
+
+int Locksmith::peek() {
+    return stack.back();
 }
 
 void Locksmith::push(int el) {
@@ -133,7 +138,7 @@ void Locksmith::step() {
     }
     else if(op == 6) {
         int loc = pop_from(locs);
-        int top = pop();
+        int top = peek();
         if(top) {
             ptr = loc;
         }
