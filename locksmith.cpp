@@ -140,7 +140,7 @@ void Locksmith::step() {
         int loc = pop_from(locs);
         int top = peek();
         if(top) {
-            ptr = loc;
+            ptr = loc - 1;
         }
     }
     else if(op == 7) {
