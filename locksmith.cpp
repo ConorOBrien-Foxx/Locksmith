@@ -161,9 +161,9 @@ void Locksmith::run() {
 }
 
 void Locksmith::debug() {
-    std::cout << ">> DEBUG <<" << std::endl;
+    std::cerr << ">> DEBUG <<" << std::endl;
     for(int el : stack) {
-        std::cout << el << std::endl;
+        std::cerr << el << std::endl;
     }
 }
 
@@ -182,4 +182,7 @@ int main(int argc, char** argv) {
     }
     Locksmith inst (read_file(argv[1]));
     inst.run();
+    if(argc >= 3) {
+        inst.debug();
+    }
 }
